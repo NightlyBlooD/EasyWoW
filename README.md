@@ -1,4 +1,5 @@
 # EasyWoW
+<code>
 (void) ResetAFKTimer();
 (void) ShowFPS(boolean or integer);
 (void) EasyWoW(boolean or integer);
@@ -133,3 +134,4 @@
 (void) MemoryWrite("type", pointer, value);
 (int) address = MemoryAllocate(size);
 (boolean) result = MemoryFree(address);
+</code>
