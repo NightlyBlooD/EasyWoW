@@ -3,7 +3,7 @@
 (void) <b>ResetAFKTimer()</b></b>;<br>
 (void) <b>ShowFPS(boolean or integer)</b>;<br>
 (void) <b>EasyWoW(boolean or integer)</b>;<br>
-(table)API, (table)ENUM = <b>EWAPI()</b>;<br>
+(table)API, ENUMs = <b>EWAPI()</b>;<br>
 (void) <b>LuaUnlock(boolean, "addonName")</b>;<br>
 (boolean)... = <b>Execute(...)</b>;<br>
 (void) <b>ExecuteFile("file")</b>;<br>
