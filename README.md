@@ -1,137 +1,137 @@
 # EasyWoW
 <code>
-(void) ResetAFKTimer();
-(void) ShowFPS(boolean or integer);
-(void) EasyWoW(boolean or integer);
-(table)API, (table)ENUM = EWAPI();
-(void) LuaUnlock(boolean, "addonName");
-(boolean)... = Execute(...);
-(void) ExecuteFile("file");
-(void) LoadFromApp();
-(void) LoadFromClass();
-(boolean) result = FileWrite("file", "value");
-(boolean) result = FileWriteLine("file", "value");
-(string) value = FileRead("file");
-(boolean) result = FileExist("file");
-(string) value = GetAppDirectory();
-(string) value = GetWoWDirectory();
-(table) value = GetFiles("directory");
-(module) value = Module("name");
-(boolean) result = LoadModuleSource("moduleName", "source");
-(boolean) result = LoadModuleFile("moduleName", "file");
-(void) RemoveModule("moduleName");
-(table) value = GetModules();
-(boolean) result = ModuleIsLoaded("moduleName");
-(int) object_count = GetObjectsCount();
-(table) objects = GetObjects();
-(table) objects = GetObjectsByType(... [typeId]);
-(float) x,y,z = GetObjectPosition(unitId);
-(int) type = GetObjectType(unitId);
-(float) distance = GetDistance(unitId_A or [x,y,z], [unitId_B or [x,y,z]);
-(float) distance = GetDistance2D(unitId_A or [x,y], [unitId_B or [x,y]);
-(float) size = GetObjectSize(unitId);
-(float) scale = GetObjectScale(unitId);
-(float) scale = GetObjectTrueScale(unitId);
-(int) id = GetObjectId(unitId);
-(int) pointer = GetObjectPointer(unitId);
-(boolean) result = LineOfSight(unitId_A or [x,y,z], [unitId_B or [x,y,z]);
-(int) mapId, (int) zoneId, (string) zoneName, (string) zoneSubName = GetCurrentMapInfo();
-(void) ObjectInteract(unitId);
-(float) x, y, z = TraceLine(unitA [or x,y,z], unitB [or x,y,z], flag);
-(void) MoveTo(([x,y,z] or [unitId]) [,type_click]);
-(boolean) result = IsClickMoving();
-(void) StopMoving();
-(void) SetFacing(float_value);
-(void) LookAt(unitId);
-(float) facing = GetFacing(unitId);
-(boolean) result = IsInFront(unitId_a[,unitId_b]);
-(float) sfacing GetSideFacing(unitId);
-(void) SpellCast("spellName" or spellId[, target]);
-(boolean) result = GroundClick(x,y,z [or unitId]);
-(float) x, y, z = GetCamPosition();
-(boolean) result = ObjectIsBehind(unitId_a[,unitId_b]);
-(boolean) result = ObjectIsFacing(unitId_a[,unitId_b]);
-(boolean) ... = GetAsyncKeyState(... (KeyId));
-(void) UseItemByNameOrID("itemName" or itemId);
-(int) spellId = GetSpellIdByShapeshiftIndex(index);
-(void) CastShapeshiftFormByIndex(index);
-(void) SendAddonMessage("prefix", "text", "type" [, "player"]);
-(void) AssistUnit(unitId);
-(void) AttackTarget();
-(void) ClearTarget();
-(void) TargetLastEnemy();
-(void) TargetLastTarget();
-(void) TargetLastFriend();
-(void) SpellTargetUnit(unitId);
-(void) FocusUnit(unitId);
-(void) ClearFocus();
-(void) SpellStopTargeting();
-(void) SpellStopCasting();
-(void) ToggleSpellAutocast("spellName" | spellId, bookType);
-(void) SetMultiCastSpell(actionID,spellID);
-(void) CastPetAction(index);
-(void) CastSpell(spellID, "bookType");
-(void) PetAttack();
-(void) JumpOrAscendStart();
-(void) RunMacro(id or "name");
-(void) RunMacroText("macrotext");
-(void) StopMacro();
-(void) UseInventoryItem(invSlot);
-(void) UseContainerItem(bagID, slot[, onSelf]);
-(void) CancelUnitBuff("unit", index or "spell" [,"filter" or "rank"]);
-(void) CancelItemTempEnchantment(weaponHand);
-(void) UseAction(slot[, checkCursor[, onSelf]]);
-(void) PlaceAuctionBid("type", index, bid);
-(void) CancelAuction(index);
-(void) AcceptTrade();
-(void) GuildInvite("playerName");
-(void) LaunchURL("url")
-(void) Teleport(unitId or x,y,z [,boolean]);
-(string) guid = DynamicObjectsCasterGuid(unitId);
-(float) radius = DynamicObjectsRadius(unitId);
-(int) spellId = DynamicObjectsSpellId(unitId);
-(int) castTime = DynamicObjectsCastTime(unitId);
-(table) raid = GetRaidMembers();
-(table) party = GetPartyMembers();
-(table) group = GetGroupMembers();
-(boolean) result = UnitIsValid(unitId);
-(boolean) result = UnitIsLootable(unitId);
-(boolean) result = UnitIsLooting(unitId);
-(boolean) result = UnitIsLooted(unitId);
-(boolean) result = UnitIsCasting(unitId);
-(boolean) result = UnitIsVendorFood(unitId);
-(boolean) result = UnitIsVendor(unitId);
-(boolean) result = UnitIsVendorReagent(unitId);
-(boolean) result = UnitIsRepairer(unitId);
-(boolean) result = UnitIsClassTrainer(unitId);
-(boolean) result = UnitIsProfessionTrainer(unitId);
-(boolean) result = UnitIsFlightMaster(unitId);
-(boolean) result = UnitIsInnkeeper(unitId);
-(boolean) result = UnitIsAuctioneer(unitId);
-(boolean) result = UnitIsBanker(unitId);
-(boolean) result = UnitIsQuestGiver(unitId);
-(boolean) result = UnitIsTotem(unitId);
-(boolean) result = UnitIsGuildBanker(unitId);
-(boolean) result = UnitIsGossip(unitId);
-(boolean) result = UnitIsMailBox(unitId);
-(boolean) result = UnitIsInCombat(unitId);
-(boolean) result = UnitGetMovementFlag(unitId);
-(boolean) result = UnitMovementHasFlag(unitId, flag);
-(boolean) result = UnitIsMoving(unitId);
-(boolean) result = UnitIsFalling(unitId);
-(string) typeName, (int) typeId = GameObjectType(unitId);
-(table) enemy = GetEnemyInRange(range);
-(table) friendly = GetFriendlyInRange(range);
-(table) enemyInCombat = GetEnemyInCombatByRange(range);
-(string) guid = GetComboPointsTarget();
-(void) SetTarget(unitId);
-(boolean) isInScreen, (float)x,y = WorldToScreen([x,y,z] or UnitId);
-(void) DrawLine(unitA, unitB, r,g,b, size) or DrawLine(s_x,s_y,s_z, e_x,e_y,e_z, r,g,b, size);
-(void) DrawText("Text", x,y,z, r,g,b, size);
-(void) DrawCircle([UnitId or x,y,z], range, r,g,b);
-(string) addonName = GetCurrentAddOnName();
-(int or string) value = MemoryRead("type", pointer[, offset]);
-(void) MemoryWrite("type", pointer, value);
-(int) address = MemoryAllocate(size);
-(boolean) result = MemoryFree(address);
+(void) <b>ResetAFKTimer()</b></b>;<br>
+(void) <b>ShowFPS(boolean or integer)</b>;<br>
+(void) <b>EasyWoW(boolean or integer)</b>;<br>
+(table)API, (table)ENUM = <b>EWAPI()</b>;<br>
+(void) <b>LuaUnlock(boolean, "addonName")</b>;<br>
+(boolean)... = <b>Execute(...)</b>;<br>
+(void) <b>ExecuteFile("file")</b>;<br>
+(void) <b>LoadFromApp()</b>;<br>
+(void) <b>LoadFromClass()</b>;<br>
+(boolean) result = <b>FileWrite("file", "value")</b>;<br>
+(boolean) result = <b>FileWriteLine("file", "value")</b>;<br>
+(string) value = <b>FileRead("file")</b>;<br>
+(boolean) result = <b>FileExist("file")</b>;<br>
+(string) value = <b>GetAppDirectory()</b>;<br>
+(string) value = <b>GetWoWDirectory()</b>;<br>
+(table) value = <b>GetFiles("directory")</b>;<br>
+(module) value = <b>Module("name")</b>;<br>
+(boolean) result = <b>LoadModuleSource("moduleName", "source")</b>;<br>
+(boolean) result = <b>LoadModuleFile("moduleName", "file")</b>;<br>
+(void) <b>RemoveModule("moduleName")</b>;<br>
+(table) value = <b>GetModules()</b>;<br>
+(boolean) result = <b>ModuleIsLoaded("moduleName")</b>;<br>
+(int) object_count = <b>GetObjectsCount()</b>;<br>
+(table) objects = <b>GetObjects()</b>;<br>
+(table) objects = <b>GetObjectsByType(... [typeId])</b>;<br>
+(float) x,y,z = <b>GetObjectPosition(unitId)</b>;<br>
+(int) type = <b>GetObjectType(unitId)</b>;<br>
+(float) distance = <b>GetDistance(unitId_A or [x,y,z], [unitId_B or [x,y,z])</b>;<br>
+(float) distance = <b>GetDistance2D(unitId_A or [x,y], [unitId_B or [x,y])</b>;<br>
+(float) size = <b>GetObjectSize(unitId)</b>;<br>
+(float) scale = <b>GetObjectScale(unitId)</b>;<br>
+(float) scale = <b>GetObjectTrueScale(unitId)</b>;<br>
+(int) id = <b>GetObjectId(unitId)</b>;<br>
+(int) pointer = <b>GetObjectPointer(unitId)</b>;<br>
+(boolean) result = <b>LineOfSight(unitId_A or [x,y,z], [unitId_B or [x,y,z])</b>;<br>
+(int) mapId, (int) zoneId, (string) zoneName, (string) zoneSubName = <b>GetCurrentMapInfo()</b>;<br>
+(void) <b>ObjectInteract(unitId)</b>;<br>
+(float) x, y, z = <b>TraceLine(unitA [or x,y,z], unitB [or x,y,z], flag)</b>;<br>
+(void) <b>MoveTo(([x,y,z] or [unitId]) [,type_click])</b>;<br>
+(boolean) result = <b>IsClickMoving()</b>;<br>
+(void) <b>StopMoving()</b>;<br>
+(void) <b>SetFacing(float_value)</b>;<br>
+(void) <b>LookAt(unitId)</b>;<br>
+(float) facing = <b>GetFacing(unitId)</b>;<br>
+(boolean) result = <b>IsInFront(unitId_a[,unitId_b])</b>;<br>
+(float) sfacing = <b>GetSideFacing(unitId)</b>;<br>
+(void) <b>SpellCast("spellName" or spellId[, target])</b>;<br>
+(boolean) result = <b>GroundClick(x,y,z [or unitId])</b>;<br>
+(float) x, y, z = <b>GetCamPosition()</b>;<br>
+(boolean) result = <b>ObjectIsBehind(unitId_a[,unitId_b])</b>;<br>
+(boolean) result = <b>ObjectIsFacing(unitId_a[,unitId_b])</b>;<br>
+(boolean) ... = <b>GetAsyncKeyState(... (KeyId))</b>;<br>
+(void) <b>UseItemByNameOrID("itemName" or itemId)</b>;<br>
+(int) spellId = <b>GetSpellIdByShapeshiftIndex(index)</b>;<br>
+(void) <b>CastShapeshiftFormByIndex(index)</b>;<br>
+(void) <b>SendAddonMessage("prefix", "text", "type" [, "player"])</b>;<br>
+(void) <b>AssistUnit(unitId)</b>;<br>
+(void) <b>AttackTarget()</b>;<br>
+(void) <b>ClearTarget()</b>;<br>
+(void) <b>TargetLastEnemy()</b>;<br>
+(void) <b>TargetLastTarget()</b>;<br>
+(void) <b>TargetLastFriend()</b>;<br>
+(void) <b>SpellTargetUnit(unitId)</b>;<br>
+(void) <b>FocusUnit(unitId)</b>;<br>
+(void) <b>ClearFocus()</b>;<br>
+(void) <b>SpellStopTargeting()</b>;<br>
+(void) <b>SpellStopCasting()</b>;<br>
+(void) <b>ToggleSpellAutocast("spellName" | spellId, bookType)</b>;<br>
+(void) <b>SetMultiCastSpell(actionID,spellID)</b>;<br>
+(void) <b>CastPetAction(index)</b>;<br>
+(void) <b>CastSpell(spellID, "bookType")</b>;<br>
+(void) <b>PetAttack()</b>;<br>
+(void) <b>JumpOrAscendStart()</b>;<br>
+(void) <b>RunMacro(id or "name")</b>;<br>
+(void) <b>RunMacroText("macrotext")</b>;<br>
+(void) <b>StopMacro()</b>;<br>
+(void) <b>UseInventoryItem(invSlot)</b>;<br>
+(void) <b>UseContainerItem(bagID, slot[, onSelf])</b>;<br>
+(void) <b>CancelUnitBuff("unit", index or "spell" [,"filter" or "rank"])</b>;<br>
+(void) <b>CancelItemTempEnchantment(weaponHand)</b>;<br>
+(void) <b>UseAction(slot[, checkCursor[, onSelf]])</b>;<br>
+(void) <b>PlaceAuctionBid("type", index, bid)</b>;<br>
+(void) <b>CancelAuction(index)</b>;<br>
+(void) <b>AcceptTrade()</b>;<br>
+(void) <b>GuildInvite("playerName")</b>;<br>
+(void) <b>LaunchURL("url")</b>;<br>
+(void) <b>Teleport(unitId or x,y,z [,boolean])</b>;<br>
+(string) guid = <b>DynamicObjectsCasterGuid(unitId)</b>;<br>
+(float) radius = <b>DynamicObjectsRadius(unitId)</b>;<br>
+(int) spellId = <b>DynamicObjectsSpellId(unitId)</b>;<br>
+(int) castTime = <b>DynamicObjectsCastTime(unitId)</b>;<br>
+(table) raid = <b>GetRaidMembers()</b>;<br>
+(table) party = <b>GetPartyMembers()</b>;<br>
+(table) group = <b>GetGroupMembers()</b>;<br>
+(boolean) result = <b>UnitIsValid(unitId)</b>;<br>
+(boolean) result = <b>UnitIsLootable(unitId)</b>;<br>
+(boolean) result = <b>UnitIsLooting(unitId)</b>;<br>
+(boolean) result = <b>UnitIsLooted(unitId)</b>;<br>
+(boolean) result = <b>UnitIsCasting(unitId)</b>;<br>
+(boolean) result = <b>UnitIsVendorFood(unitId)</b>;<br>
+(boolean) result = <b>UnitIsVendor(unitId)</b>;<br>
+(boolean) result = <b>UnitIsVendorReagent(unitId)</b>;<br>
+(boolean) result = <b>UnitIsRepairer(unitId)</b>;<br>
+(boolean) result = <b>UnitIsClassTrainer(unitId)</b>;<br>
+(boolean) result = <b>UnitIsProfessionTrainer(unitId)</b>;<br>
+(boolean) result = <b>UnitIsFlightMaster(unitId)</b>;<br>
+(boolean) result = <b>UnitIsInnkeeper(unitId)</b>;<br>
+(boolean) result = <b>UnitIsAuctioneer(unitId)</b>;<br>
+(boolean) result = <b>UnitIsBanker(unitId)</b>;<br>
+(boolean) result = <b>UnitIsQuestGiver(unitId)</b>;<br>
+(boolean) result = <b>UnitIsTotem(unitId)</b>;<br>
+(boolean) result = <b>UnitIsGuildBanker(unitId)</b>;<br>
+(boolean) result = <b>UnitIsGossip(unitId)</b>;<br>
+(boolean) result = <b>UnitIsMailBox(unitId)</b>;<br>
+(boolean) result = <b>UnitIsInCombat(unitId)</b>;<br>
+(boolean) result = <b>UnitGetMovementFlag(unitId)</b>;<br>
+(boolean) result = <b>UnitMovementHasFlag(unitId, flag)</b>;<br>
+(boolean) result = <b>UnitIsMoving(unitId)</b>;<br>
+(boolean) result = <b>UnitIsFalling(unitId)</b>;<br>
+(string) typeName, (int) typeId = <b>GameObjectType(unitId)</b>;<br>
+(table) enemy = <b>GetEnemyInRange(range)</b>;<br>
+(table) friendly = <b>GetFriendlyInRange(range)</b>;<br>
+(table) enemyInCombat = <b>GetEnemyInCombatByRange(range)</b>;<br>
+(string) guid = <b>GetComboPointsTarget()</b>;<br>
+(void) <b>SetTarget(unitId)</b>;<br>
+(boolean) isInScreen, (float)x,y = <b>WorldToScreen([x,y,z] or UnitId)</b>;<br>
+(void) <b>DrawLine(unitA, unitB, r,g,b, size) or DrawLine(s_x,s_y,s_z, e_x,e_y,e_z, r,g,b, size)</b>;<br>
+(void) <b>DrawText("Text", x,y,z, r,g,b, size)</b>;<br>
+(void) <b>DrawCircle([UnitId or x,y,z], range, r,g,b)</b>;<br>
+(string) addonName = <b>GetCurrentAddOnName()</b>;<br>
+(int or string) value = <b>MemoryRead("type", pointer[, offset])</b>;<br>
+(void) <b>MemoryWrite("type", pointer, value)</b>;<br>
+(int) address = <b>MemoryAllocate(size)</b>;<br>
+(boolean) result = <b>MemoryFree(address)</b>;<br>
 </code>
