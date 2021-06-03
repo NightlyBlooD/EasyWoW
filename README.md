@@ -1,5 +1,5 @@
 # EasyWoW
-<code>
+
 (void) <b>ResetAFKTimer()</b></b>;<br>
 (void) <b>ShowFPS(boolean or integer)</b>;<br>
 (void) <b>EasyWoW(boolean or integer)</b>;<br>
@@ -134,4 +134,3 @@
 (void) <b>MemoryWrite("type", pointer, value)</b>;<br>
 (int) address = <b>MemoryAllocate(size)</b>;<br>
 (boolean) result = <b>MemoryFree(address)</b>;<br>
-</code>
