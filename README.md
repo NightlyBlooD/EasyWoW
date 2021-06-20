@@ -28,7 +28,7 @@
 ```cpp
 (void) ShowFPS(boolean or integer)
 ```
-L: Показать/Скрыть окно программы:
+>L: Показать/Скрыть окно программы:
 ```cpp
 (void) EasyWoW(boolean or integer);
 ```
