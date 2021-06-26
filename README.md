@@ -21,19 +21,19 @@
 ## Системные функции
 
 >L: Сброс афк таймера:
-```cpp
+```C#
 (void) ResetAFKTimer();
 ```
 >L: Показать счётчик FPS:
-```cpp
+```C#
 (void) ShowFPS(boolean or integer)
 ```
 >L: Показать/Скрыть окно программы:
-```cpp
+```C#
 (void) EasyWoW(boolean or integer);
 ```
 ><b>G:</b> Инициализации локальных API и таблиц:
-```cpp
+```C#
 (table) API, ENUMs = EWAPI(); 
 /* example:
     /run api = EWAPI() api.ResetAFKTimer();
@@ -41,11 +41,11 @@
 ```
 
 >L: Разблокировка луа для определённого аддона:
-```cpp
+```C#
 (void) LuaUnlock(boolean, "addonName");
 ```
 ><b>G:</b> Вызов <strong><em>lua</em></strong> кода без блокировок:
-```cpp
+```C#
 (bool) ... = Execute(...);
 /* example:
     /run a,b,c = Execute("print(123)", "CastSpellByID(123, \"target\")","message('Hello World')");
@@ -59,47 +59,47 @@
 */
 ```
 ><b>G:</b> Загрузка <strong><em>.lua</em></strong> файла в игру:
-```cpp
+```C#
 (void) ExecuteFile("file");
 /* example
     /run ExecuteFile("D:\\MyRotation\\core.lua");
 */
 ```
 >L: Загрузить все <strong><em>.lua</em></strong> файлы из корневой папки программы:
-```cpp
+```C#
 (void) LoadFromApp();
 ```
 >L: Загрузить все <strong><em>.lua</em></strong> файлы из папки с вашим классом:
-```cpp
+```C#
 (void) LoadFromClass();
 ```
 >L: Открыть страницу в браузере по умолчанию
-```cpp
+```C#
 (void) LaunchURL("url");
 ```
 >L: Имя аддона из которого происходит вызов
-```cpp
+```C#
 (string) addonName = GetCurrentAddOnName();
 /* example
     /run api.LuaUnlock(true, GetCurrentAddonName());
 */
 ```
 >L: Проверка нажатия клавиш
-```cpp
+```C#
 (bool) ... = GetAsyncKeyState(... (KeyId));
 /*
     /run a,s = api.GetAsyncKeyState(0x41, 0x53) if(a and s) then print("A and S is pressed!") end;
 */
 ```
 ***
+
 ## Работа с файлами/папками
-+ (модули - это аналог функции require)
-<br>
+
 
 
 >L: Путь к папке с программой
 
-```cpp
+```C#
 (string) value = GetAppDirectory();
 /* example
     print(api.GetAppDirectory()) -- C:\\EasyWoW\\
@@ -108,7 +108,7 @@
 
 >L: Путь к папке с запущенным клиентов WoW
 
-```cpp
+```C#
 (string) value = GetWoWDirectory();
 /* example
     print(api.GetWoWDirectory()) -- C:\\Game\\World of Warcraft\\
@@ -116,7 +116,7 @@
 ```
 >L: Записать текст в файл
 
-```cpp
+```C#
 (bool) result = FileWrite("file", "value");
 /* example
     /run isGood = api.FileWrite("C:\\MyFile.txt", "Hello World");
@@ -126,7 +126,7 @@
 ```
 >L: Записать текст в конец файла.
 
-```cpp
+```C#
 (bool) result = FileWriteLine("file", "value");
 /* example
     /run isGood = api.FileWriteLine("C:\\MyFile.txt", "Hello World");
@@ -135,14 +135,14 @@
 */
 ```
 >L: Загрузить в переменную содержимое файла в виде текста.
-```cpp
+```C#
 (string) value = FileRead("file");
 /* example
     /run text = api.FileRead("C:\\MyFile.txt"); print(text);
 */
 ```
 >L: Проверка существование файла
-```cpp
+```C#
 (bool) result = FileExist("file");
 /* example
     /run isExist = api.FileExist("C:\\MyFile.txt");
@@ -150,7 +150,7 @@
 */
 ```
 >L: Получение всех файлов в папке
-```cpp
+```C#
 (table) value = GetFiles("directory"[,filter]);
 /* example 
     /run files = api.GetFiles(api.GetAppDirectory(), "exe");
@@ -158,9 +158,12 @@
 */
 ```
 ***
+
 ## Модули
++ (модули - это аналог функции require)
+<br>
 >L: Загрузить модуль в клиент игры (используя исходный код)
-```cpp
+```C#
 (bool) result = LoadModuleSource("moduleName", "source");
 /* example
     /run result = api.LoadModuleSource("MyModule","return 1;");
@@ -168,7 +171,7 @@
 */
 ```
 >L: Загрузить модуль в клиент игры (используя чтение файла)
-```cpp
+```C#
 (bool) result = LoadModuleFile("moduleName", "file");
 /* example
     /run result = api.LoadModuleSource("MyModule","C:\\MyModule.lua");
@@ -176,7 +179,7 @@
 */
 ```
 >L: Проверка наличие модуля в клиенте игры
-```cpp
+```C#
 (bool) result = ModuleIsLoaded("moduleName");
 /* example
     /run isLoad = api.ModuleIsLoaded("MyModule");
@@ -184,7 +187,7 @@
 */
 ```
 >L: Список всех модулей
-```cpp
+```C#
 (table) value = GetModules();
 /* example
     /run moduleList = api.GetModules();
@@ -192,14 +195,14 @@
 */
 ```
 >L: Загрузка модуля в код
-```cpp
+```C#
 (module) value = Module("name");
 /* example
     /run spells = api.Module("Spells"); spells.Starfall:Cast("target");
 */
 ```
 >L: Выгрузка модуля из клиента игры
-```cpp
+```C#
 (void) RemoveModule("moduleName");
 ```
 ***
@@ -207,7 +210,7 @@
 ## Работа с памятью 
 
 >L: Значение из памяти
-```cpp
+```C#
 (int or string) value = MemoryRead("type", pointer[, offset]);
 /* example
     /run value = api.MemoryRead("int", 0x12345678);
@@ -215,21 +218,21 @@
 */
 ```
 >L: Записать значение в указанный адрес памяти
-```cpp
+```C#
 (void) MemoryWrite("type", pointer, value);
 /* example
     /run api.MemoryWrite("string", 0x12345678, "ABC"); a = api.MemoryRead("string", 0x12345678);
 */
 ```
 >L: Зарезервировать участок памяти
-```cpp
+```C#
 (int) address = MemoryAllocate(size);
 /* example 
     /run adr = api.MemoryAllocate(4); api.MemoryWrite("float", adr, 0.123);
 */
 ```
 >L: Выгрузить участок памяти
-```cpp
+```C#
 (bool) result = MemoryFree(address);
 /* example 
     /run adr = api.MemoryAllocate(4); result = api.MemoryFree(adr);
@@ -237,111 +240,20 @@
 ```
 ***
 
-## Работа с игровыми объектами
 
->L: Количество объектов
-```cpp
-(int) object_count = GetObjectsCount();
-```
->L: Список объектов
-```cpp
-(table) objects = GetObjects();
-/* example
-    for k,v in pairs(api.GetObjects()) do
-        print(UnitName(v));
-    end
-*/
-```
->L: Список объектов отсортированных по типу
-```cpp
-(table) objects = GetObjectsByType(... [typeId]);
-/* example 
-    сортировка юнитов и игроков
-    for k,v in pairs(api.GetObjectsByType(3,4)) do
-        print(UnitName(v));
-    end
-*/
-```
->L: Позиция объекта
-```cpp
-(float) x,y,z = GetObjectPosition(unitId);
-```
->L: Тип объекта
-```cpp
-(int) type = GetObjectType(unitId);
-```
->L: Дистанция между точками/объектами (по трём осям)
-```cpp
-(float) distance = GetDistance(unitId_A or [x,y,z], [unitId_B or [x,y,z]);
-```
->L: Дистанция между точками/объектами (по двум осям X и Y)
-```cpp
-(float) distance = GetDistance2D(unitId_A or [x,y], [unitId_B or [x,y]);
-```
->L: Размер объекта
-```cpp
-(float) size = GetObjectSize(unitId);
-```
->L: Множитель размера
-```cpp
-(float) scale = GetObjectScale(unitId);
-(float) scale = GetObjectTrueScale(unitId);
-```
->L: Номер объекта
-```cpp
-(int) id = GetObjectId(unitId);
-```
->L: Указатель на объект
-```cpp
-(int) pointer = GetObjectPointer(unitId);
-/* example
-    /run ptr = api.GetObjectPointer("player"); guid = api.MemoryRead("int64", ptr, 0x8);
-*/
-```
->L: Взаимодействие с объектом
-```cpp
-(void) ObjectInteract(unitId);
-```
->L: Объект стоит спиной
-```cpp
-(bool) result = ObjectIsBehind(unitId_a[,unitId_b]);
-/* example
-    /run if(api.ObjectIsBehind("target")) then print("Target is behind"); end;
-*/
-```
->L: Объект стоит лицом
-```cpp
-(bool) result = ObjectIsFacing(unitId_a[,unitId_b]);
-/* example
-    /run if(api.ObjectIsFacing("target", "focus")) then print("Фокус стоит лицом к таргету"); end;
-*/
-```
->L: Угол в который направлен объект
-```cpp
-(float) facing = GetFacing(unitId);
-```
->L: Объект перед лицом
-```cpp
-(bool) result = IsInFront(unitId_a[,unitId_b]);
-```
->L: Сторона направления объекта
-```cpp
-(float) sfacing = GetSideFacing(unitId);
-```
 
-***
 ## Игровой мир
 
 >L: Информация о локации
-```cpp
+```C#
 (int) mapId, (int) zoneId, (string) zoneName, (string) zoneSubName = GetCurrentMapInfo();
 ```
 >L: Позиция камеры
-```cpp
+```C#
 (float) x, y, z = GetCamPosition();
 ```
 >L: Применить способность по местности
-```cpp
+```C#
 (bool) result = GroundClick(x,y,z or (unitId[, CanHack]));
 /* example 
     /run CastSpellByID(47820); api.GroundClick("target") -- применение по позиции таргета
@@ -349,25 +261,25 @@
 */
 ```
 >L: Координаты коллизии между точками (преграды)
-```cpp
+```C#
 (float) x, y, z = TraceLine(unitA [or x,y,z], unitB [or x,y,z], flag);
 ```
 >L: Проверка препядствия на пути (не на всех сервера работотает корректно)
-```cpp
+```C#
 (bool) result = LineOfSight(unitId_A or [x,y,z], [unitId_B or [x,y,z]);
 /* example
     /run if(api.LineOfSight("player", "target")) then CastSpellByID(48441) end;
 */
 ```
 >L: Перевод игровых координат в координаты для монитора
-```cpp
+```C#
 (bool) isInScreen, (float)x,y = WorldToScreen([x,y,z] or UnitId);
 ```
 ***
 
 ## Рисование
 >L: Нарисовать линию в игровом мире
-```cpp
+```C#
 (void) DrawLine(unitA, unitB, r,g,b, size) or DrawLine(s_x,s_y,s_z, e_x,e_y,e_z, r,g,b, size);
 /* example
     f = CreateFrame("Frame")
@@ -380,7 +292,7 @@
 */
 ```
 >L: Нарисовать текст в игровом мире
-```cpp
+```C#
 (void) DrawText("Text", x,y,z, r,g,b, size);
 /* example
     f = CreateFrame("Frame")
@@ -394,7 +306,7 @@
 */
 ```
 >L: Нарисовать круг в игровом мире
-```cpp
+```C#
 (void) DrawCircle([UnitId or x,y,z], range, r,g,b);
 /* example
     f = CreateFrame("Frame")
@@ -408,23 +320,322 @@
 */
 ```
 ***
+
+## Работа с объектами
+
+>L: Количество объектов
+```C#
+(int) object_count = GetObjectsCount();
+```
+>L: Список объектов
+```C#
+(table) objects = GetObjects();
+/* example
+    for k,v in pairs(api.GetObjects()) do
+        print(UnitName(v));
+    end
+*/
+```
+>L: Список объектов отсортированных по типу
+```C#
+(table) objects = GetObjectsByType(... [typeId]);
+/* example 
+    сортировка юнитов и игроков
+    for k,v in pairs(api.GetObjectsByType(3,4)) do
+        print(UnitName(v));
+    end
+*/
+```
+>L: Позиция объекта
+```C#
+(float) x,y,z = GetObjectPosition(unitId);
+```
+>L: Тип объекта
+```C#
+(int) type = GetObjectType(unitId);
+```
+>L: Дистанция между точками/объектами (по трём осям)
+```C#
+(float) distance = GetDistance(unitId_A or [x,y,z], [unitId_B or [x,y,z]);
+```
+>L: Дистанция между точками/объектами (по двум осям X и Y)
+```C#
+(float) distance = GetDistance2D(unitId_A or [x,y], [unitId_B or [x,y]);
+```
+>L: Размер объекта
+```C#
+(float) size = GetObjectSize(unitId);
+```
+>L: Множитель размера
+```C#
+(float) scale = GetObjectScale(unitId);
+(float) scale = GetObjectTrueScale(unitId);
+```
+>L: Номер объекта
+```C#
+(int) id = GetObjectId(unitId);
+```
+>L: Указатель на объект
+```C#
+(int) pointer = GetObjectPointer(unitId);
+/* example
+    /run ptr = api.GetObjectPointer("player"); guid = api.MemoryRead("int64", ptr, 0x8);
+*/
+```
+>L: Взаимодействие с объектом
+```C#
+(void) ObjectInteract(unitId);
+```
+>L: Объект стоит спиной
+```C#
+(bool) result = ObjectIsBehind(unitId_a[,unitId_b]);
+/* example
+    /run if(api.ObjectIsBehind("target")) then print("Target is behind"); end;
+*/
+```
+>L: Объект стоит лицом
+```C#
+(bool) result = ObjectIsFacing(unitId_a[,unitId_b]);
+/* example
+    /run if(api.ObjectIsFacing("target", "focus")) then print("Фокус стоит лицом к таргету"); end;
+*/
+```
+>L: Угол в который направлен объект
+```C#
+(float) facing = GetFacing(unitId);
+```
+>L: Объект перед лицом
+```C#
+(bool) result = IsInFront(unitId_a[,unitId_b]);
+```
+>L: Сторона направления объекта
+```C#
+(float) sfacing = GetSideFacing(unitId);
+```
+
+***
+
+## Units
+>L: Список всех участников рейда
+```C#
+(table) raid = GetRaidMembers();
+```
+>L: Список всех участников группы
+```C#
+(table) party = GetPartyMembers();
+```
+>L: Список всех участников группы или рейда
+```C#
+(table) group = GetGroupMembers();
+```
+>L: Юнит существует и находится в зоне видимости
+```C#
+(bool) result = UnitIsValid(unitId);
+```
+>L: Можно собрать добычу
+```C#
+(bool) result = UnitIsLootable(unitId);
+```
+>L: Открыто окно сбора добычи у этого юнита
+```C#
+(bool) result = UnitIsLooting(unitId);
+```
+>L: У юнита осмотрели добычу
+```C#
+(bool) result = UnitIsLooted(unitId);
+```
+>L: Юнит применяет заклинание
+```C#
+(bool) result = UnitIsCasting(unitId);
+```
+>L: Юнит является продавцом еды
+```C#
+(bool) result = UnitIsVendorFood(unitId);
+```
+>L: Юнит является продавцом
+```C#
+(bool) result = UnitIsVendor(unitId);
+```
+>L: Юнит является продавцом реагентов
+```C#
+(bool) result = UnitIsVendorReagent(unitId);
+```
+>L: Юнит может починить предметы
+```C#
+(bool) result = UnitIsRepairer(unitId);
+```
+>L: Юнит - классовый тренер
+```C#
+(bool) result = UnitIsClassTrainer(unitId);
+```
+>L: Юнит - тренер профессий
+```C#
+(bool) result = UnitIsProfessionTrainer(unitId);
+```
+>L: Юнит - мастер полётов
+```C#
+(bool) result = UnitIsFlightMaster(unitId);
+```
+>L: Юнит - хозяин таверны
+```C#
+(bool) result = UnitIsInnkeeper(unitId);
+```
+>L: Юнит - Аукнционер
+```C#
+(bool) result = UnitIsAuctioneer(unitId);
+```
+>L: Юнит - банкир
+```C#
+(bool) result = UnitIsBanker(unitId);
+```
+>L: Юнит - даёт квесты
+```C#
+(bool) result = UnitIsQuestGiver(unitId);
+```
+>L: Юнит - является тотемом
+```C#
+(bool) result = UnitIsTotem(unitId);
+```
+>L: Юнит - является гильдейским банком
+```C#
+(bool) result = UnitIsGuildBanker(unitId);
+```
+>L: С юнитом можно открыть диалог
+```C#
+(bool) result = UnitIsGossip(unitId);
+```
+>L: Юнит - является почтой
+```C#
+(bool) result = UnitIsMailBox(unitId);
+```
+>L: Юнит находится в бою
+```C#
+(bool) result = UnitIsInCombat(unitId);
+```
+>L: Флаг передвижения юнита
+```C#
+(bool) result = UnitGetMovementFlag(unitId);
+```
+>L: Проверка на наличие флага передвижения
+```C#
+(bool) result = UnitMovementHasFlag(unitId, flag);
+```
+>L: Юнит передвигается
+```C#
+(bool) result = UnitIsMoving(unitId);
+```
+>L: Юнит падает 
+```C#
+(bool) result = UnitIsFalling(unitId);
+```
+>L: Список агрессивных юнитов в радиусе
+```C#
+(table) enemy = GetEnemyInRange(range);
+```
+>L: Список дружелюбных юнитов в радиусе
+```C#
+(table) friendly = GetFriendlyInRange(range);
+```
+>L: Список агрессивных юнитов в радиусе находящихся в бою
+```C#
+(table) enemyInCombat = GetEnemyInCombatByRange(range);
+```
+>L: Гуид юнита на котором есть комбо-поинты
+```C#
+(string) guid = GetComboPointsTarget();
+```
+***
+
+## Игрок
+>L: Передвижение в коодинаты
+```C#
+(void) MoveTo(([x,y,z] or [unitId]) [,type_click]);
+```
+>L: Проверка на наличие активного передвижения к координате
+```C#
+(bool) result = IsClickMoving();
+```
+>L: Остановить передвижение
+```C#
+(void) StopMoving();
+/* example
+    /run if(api.IsClickMoving()) then api.StopMoving(); end;
+*/
+```
+>L: Повернуть персонажа
+```C#
+(void) SetFacing(float_value);
+```
+>L: Повернуться лицом к юниту/объекту
+```C#
+(void) LookAt(unitId);
+```
+>L: Выбрать таргет
+```C#
+(void) SetTarget(unitId);
+```
+>L: Телепортироваться <b>(HACK)</b>
+```C#
+(void) Teleport(unitId or x,y,z [,boolean]);
+```
+
+***
+
+## Game Object
+>L: Тип игрового объекта
+```C#
+(string) typeName, (int) typeId = GameObjectType(unitId);
+```
+>L: Тип игрового объекта
+```C#
+(string) guid = GameObjectCreatedGuid(unitId);
+```
+>L: Тип игрового объекта
+```C#
+(bool) isMine = GameObjectIsMine(unitId);
+```
+
+
+## Dynamic Objects
+>L: Гуид создателя
+```C#
+(string) guid = DynamicObjectCasterGuid(unitId);
+```
+>L: Вы создатель DynamicObject
+```C#
+(bool) isMine = DynamicObjectIsMine(unitId);
+```
+>L: Радиус
+```C#
+(float) radius = DynamicObjectRadius(unitId);
+```
+>L: Номер способности
+```C#
+(int) spellId = DynamicObjectSpellId(unitId);
+```
+>L: Время создания
+```C#
+(int) castTime = DynamicObjectCastTime(unitId);
+```
+***
+
 ## Разблокированные Lua функции из клиента
 + Сделано для обхода защит различных серверов
 
 >L: Совмещённая функция CastSpellByID и CastSpellByName
-```cpp
+```C#
 (void) SpellCast("spellName" or spellId[, target]);
 ```
 >L: Использование предметов по имени или номеру
-```cpp
+```C#
 (void) UseItemByNameOrID("itemName" or itemId);
 ```
 >L: Номер способности по индексу стойки
-```cpp
+```C#
 (int) spellId = GetSpellIdByShapeshiftIndex(index);
 ```
->L: Оригинальные функции
-```cpp
+>L: Оригинальные WoW API функции
+```C#
 (void) CastShapeshiftFormByIndex(index);
 (void) SendAddonMessage("prefix", "text", "type" [, "player"]);
 (void) AssistUnit(unitId);
@@ -458,192 +669,3 @@
 (void) GuildInvite("playerName");
 ```
 ***
-## Dynamic Objects
->L: Гуид создателя
-```cpp
-(string) guid = DynamicObjectsCasterGuid(unitId);
-```
->L: Радиус
-```cpp
-(float) radius = DynamicObjectsRadius(unitId);
-```
->L: Номер способности
-```cpp
-(int) spellId = DynamicObjectsSpellId(unitId);
-```
->L: Время создания
-```cpp
-(int) castTime = DynamicObjectsCastTime(unitId);
-```
-***
-## Units
->L: Список всех участников рейда
-```cpp
-(table) raid = GetRaidMembers();
-```
->L: Список всех участников группы
-```cpp
-(table) party = GetPartyMembers();
-```
->L: Список всех участников группы или рейда
-```cpp
-(table) group = GetGroupMembers();
-```
->L: Юнит существует и находится в зоне видимости
-```cpp
-(bool) result = UnitIsValid(unitId);
-```
->L: Можно собрать добычу
-```cpp
-(bool) result = UnitIsLootable(unitId);
-```
->L: Открыто окно сбора добычи у этого юнита
-```cpp
-(bool) result = UnitIsLooting(unitId);
-```
->L: У юнита осмотрели добычу
-```cpp
-(bool) result = UnitIsLooted(unitId);
-```
->L: Юнит применяет заклинание
-```cpp
-(bool) result = UnitIsCasting(unitId);
-```
->L: Юнит является продавцом еды
-```cpp
-(bool) result = UnitIsVendorFood(unitId);
-```
->L: Юнит является продавцом
-```cpp
-(bool) result = UnitIsVendor(unitId);
-```
->L: Юнит является продавцом реагентов
-```cpp
-(bool) result = UnitIsVendorReagent(unitId);
-```
->L: Юнит может починить предметы
-```cpp
-(bool) result = UnitIsRepairer(unitId);
-```
->L: Юнит - классовый тренер
-```cpp
-(bool) result = UnitIsClassTrainer(unitId);
-```
->L: Юнит - тренер профессий
-```cpp
-(bool) result = UnitIsProfessionTrainer(unitId);
-```
->L: Юнит - мастер полётов
-```cpp
-(bool) result = UnitIsFlightMaster(unitId);
-```
->L: Юнит - хозяин таверны
-```cpp
-(bool) result = UnitIsInnkeeper(unitId);
-```
->L: Юнит - Аукнционер
-```cpp
-(bool) result = UnitIsAuctioneer(unitId);
-```
->L: Юнит - банкир
-```cpp
-(bool) result = UnitIsBanker(unitId);
-```
->L: Юнит - даёт квесты
-```cpp
-(bool) result = UnitIsQuestGiver(unitId);
-```
->L: Юнит - является тотемом
-```cpp
-(bool) result = UnitIsTotem(unitId);
-```
->L: Юнит - является гильдейским банком
-```cpp
-(bool) result = UnitIsGuildBanker(unitId);
-```
->L: С юнитом можно открыть диалог
-```cpp
-(bool) result = UnitIsGossip(unitId);
-```
->L: Юнит - является почтой
-```cpp
-(bool) result = UnitIsMailBox(unitId);
-```
->L: Юнит находится в бою
-```cpp
-(bool) result = UnitIsInCombat(unitId);
-```
->L: Флаг передвижения юнита
-```cpp
-(bool) result = UnitGetMovementFlag(unitId);
-```
->L: Проверка на наличие флага передвижения
-```cpp
-(bool) result = UnitMovementHasFlag(unitId, flag);
-```
->L: Юнит передвигается
-```cpp
-(bool) result = UnitIsMoving(unitId);
-```
->L: Юнит падает 
-```cpp
-(bool) result = UnitIsFalling(unitId);
-```
->L: Список агрессивных юнитов в радиусе
-```cpp
-(table) enemy = GetEnemyInRange(range);
-```
->L: Список дружелюбных юнитов в радиусе
-```cpp
-(table) friendly = GetFriendlyInRange(range);
-```
->L: Список агрессивных юнитов в радиусе находящихся в бою
-```cpp
-(table) enemyInCombat = GetEnemyInCombatByRange(range);
-```
->L: Гуид юнита на котором есть комбо-поинты
-```cpp
-(string) guid = GetComboPointsTarget();
-```
-***
-## Игрок
->L: Передвижение в коодинаты
-```cpp
-(void) MoveTo(([x,y,z] or [unitId]) [,type_click]);
-```
->L: Проверка на наличие активного передвижения к координате
-```cpp
-(bool) result = IsClickMoving();
-```
->L: Остановить передвижение
-```cpp
-(void) StopMoving();
-/* example
-    /run if(api.IsClickMoving()) then api.StopMoving(); end;
-*/
-```
->L: Повернуть персонажа
-```cpp
-(void) SetFacing(float_value);
-```
->L: Повернуться лицом к юниту/объекту
-```cpp
-(void) LookAt(unitId);
-```
->L: Выбрать таргет
-```cpp
-(void) SetTarget(unitId);
-```
->L: Телепортироваться <b>(HACK)</b>
-```cpp
-(void) Teleport(unitId or x,y,z [,boolean]);
-```
-
-***
-## Game Object
->L: Тип игрового объекта
-```cpp
-(string) typeName, (int) typeId = GameObjectType(unitId);
-```
-
-
