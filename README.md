@@ -541,7 +541,7 @@
 ```C#
 (table) enemyInCombat = GetEnemyInCombatByRange(range);
 ```
->L: Гуид юнита на котором есть комбо-поинты
+>L: GUID юнита на котором есть комбо-поинты
 ```C#
 (string) guid = GetComboPointsTarget();
 ```
@@ -587,18 +587,18 @@
 ```C#
 (string) typeName, (int) typeId = GameObjectType(unitId);
 ```
->L: Тип игрового объекта
+>L: GUID создателя
 ```C#
 (string) guid = GameObjectCreatedGuid(unitId);
 ```
->L: Тип игрового объекта
+>L: Вы создатель GameObject
 ```C#
 (bool) isMine = GameObjectIsMine(unitId);
 ```
 
 
 ## Dynamic Objects
->L: Гуид создателя
+>L: GUID создателя
 ```C#
 (string) guid = DynamicObjectCasterGuid(unitId);
 ```
