@@ -73,6 +73,11 @@
 ```C#
 (void) LoadFromClass();
 ```
+>L: Загрузка и выполение кода в буфере Lua
+```C#
+(object) LoadBuffer("source");
+```
+
 >L: Открыть страницу в браузере по умолчанию
 ```C#
 (void) LaunchURL("url");
