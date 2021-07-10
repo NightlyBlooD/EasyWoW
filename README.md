@@ -663,15 +663,15 @@
 (bool) isImmuneInterrupt 
 = UnitChanneledInfo(unitId);
 ```
->L: Механика спобобности
+>L: Механика споcобности
 ```C#
 (int) mechanicId, (string) mechanicName = GetSpellMechanic(spellName or spellId);
 ```
->L: Эффект спобобности
+>L: Эффект споcобности
 ```C#
 (int) eff1, eff2, eff3 = GetSpellEffect(spellName or spellId);
 ```
->L: Дальность применения спобобности
+>L: Дальность применения споcобности
 ```C#
 (float) minRange, maxRange = GetSpellRange(spellName or spellId [, unitId]);
 ```
