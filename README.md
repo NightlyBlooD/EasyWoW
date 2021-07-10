@@ -17,6 +17,7 @@
 + Имя функции <strong>ExecuteFile</strong> зависит от функции Execute и добавляется префикс File.
 + Имя функции <strong>EasyWoW</strong> меняется в ижеторе.
 + Макрос <strong>/execute</strong> изменяется в зависимости от имени функции <strong>Execute</strong>.
+#
 
 ## Системные функции
 
@@ -623,6 +624,74 @@
 ```C#
 (int) castTime = DynamicObjectCastTime(unitId);
 ```
+***
+
+## Spell
+>L: Номер применияемого заклинания юнитом
+```C#
+(int) spellId = GetCastingSpellId(unitId);
+```
+>L: Номер потокового заклинания приминяемого юнитом
+```C#
+(int) spellId = GetChanneledSpellId(unitId);
+```
+>L: Информация о применяемой способности юнитом
+```C#
+(int) spellId, 
+(string) spellName, 
+(string) rank, 
+(string) spellMechanicName, 
+(int) spellMechanic, 
+(table int) spellEffect[3], 
+(float) timeToEndCast, 
+(float) minRange, 
+(float) maxRange, 
+(bool) isImmuneInterrupt 
+= UnitCastingInfo(unitId);
+```
+>L: Информация о применяемой потоковой способности юнитом
+```C#
+(int) spellId, 
+(string) spellName, 
+(string) rank, 
+(string) spellMechanicName, 
+(int) spellMechanic, 
+(table int) spellEffect[3], 
+(float) timeToEndCast, 
+(float) minRange, 
+(float) maxRange, 
+(bool) isImmuneInterrupt 
+= UnitChanneledInfo(unitId);
+```
+>L: Механика спобобности
+```C#
+(int) mechanicId, (string) mechanicName = GetSpellMechanic(spellName or spellId);
+```
+>L: Эффект спобобности
+```C#
+(int) eff1, eff2, eff3 = GetSpellEffect(spellName or spellId);
+```
+>L: Дальность применения спобобности
+```C#
+(float) minRange, maxRange = GetSpellRange(spellName or spellId [, unitId]);
+```
+>L: Количество изученных способностей
+```C#
+(int) spellCount = GetSpellCount();
+```
+>L: Информация о изученной способности по номеру в книге заклинаний
+```C#
+(int) spellId, 
+(string) spellName, 
+(string) rank,
+(int) castTime, 
+(int) powerCost,
+(int) spellMechanic, 
+(string) spellMechanicName 
+= GetSpellBySpellBookIndex();
+```
+
+GetSpellBySpellBookIndex
 ***
 
 ## Разблокированные Lua функции из клиента
