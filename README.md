@@ -643,6 +643,7 @@
 (string) spellMechanicName, 
 (int) spellMechanic, 
 (table int) spellEffect[3], 
+(table string) spellEffectName[3], 
 (float) timeToEndCast, 
 (float) minRange, 
 (float) maxRange, 
@@ -656,7 +657,8 @@
 (string) rank, 
 (string) spellMechanicName, 
 (int) spellMechanic, 
-(table int) spellEffect[3], 
+(table int) spellEffect[3],
+(table string) spellEffectName[3],  
 (float) timeToEndCast, 
 (float) minRange, 
 (float) maxRange, 
@@ -670,6 +672,10 @@
 >L: Эффект споcобности
 ```C#
 (int) eff1, eff2, eff3 = GetSpellEffect(spellName or spellId);
+```
+>L: Эффект споcобности
+```C#
+(string) eff1, eff2, eff3 = GetSpellEffectName(spellName or spellId);
 ```
 >L: Дальность применения споcобности
 ```C#
