@@ -691,7 +691,6 @@
 = GetSpellBySpellBookIndex();
 ```
 
-GetSpellBySpellBookIndex
 ***
 
 ## Разблокированные Lua функции из клиента
