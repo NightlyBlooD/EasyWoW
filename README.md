@@ -1,5 +1,5 @@
 # EasyWoW
-+ <a href="../../releases" download>Скачать Easy WoW</a><br />
++ <a href="../../releases" download>Скачать Easy WoW</a>
 </br>
 
 >Необходимые библиотеки для работы ПО:</br>
