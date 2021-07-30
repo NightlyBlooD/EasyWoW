@@ -1,6 +1,7 @@
 # EasyWoW
-Необходимые библиотеки для работы ПО:</br>
 + <a href="../../releases" download>Скачать Easy WoW</a><br />
+</br>
+>Необходимые библиотеки для работы ПО:</br>
 + <a href="https://support.microsoft.com/ru-ru/help/2977003/the-latest-supported-visual-c-downloads">Скачать vc_redist.x(32/64).exe</a><br />
 + <a href="https://go.microsoft.com/fwlink/?linkid=2088631">Скачать .NET Framework 4.8</a><br />
 + <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Скачать DirectX End-User Runtime Web Installer</a> (WINDOWS - 7)<br />
