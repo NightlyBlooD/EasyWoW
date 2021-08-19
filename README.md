@@ -707,7 +707,18 @@
 (string) spellMechanicName 
 = GetSpellBySpellBookIndex();
 ```
-
+>L: Номер способности
+```C#
+(int) spellId = GetSpellId("SpellName");
+```
+>L: Имя способности
+```C#
+(string) spellName = GetSpellName(spellId);
+```
+>L: Время восстановление способности в сек.
+```C#
+(float) cooldown = GetSpellCooldown(spellId or "name");
+```
 ***
 
 ## Разблокированные Lua функции из клиента
