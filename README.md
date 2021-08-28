@@ -562,6 +562,18 @@
 ```C#
 (string) guid = GetComboPointsTarget();
 ```
+>L: Получить GUID таргета юнита.
+```C#
+(string) guid = GetUnitTarget("unitId");
+```
+>L: Получить GUID спутника юнита.
+```C#
+(string) guid = GetUnitPet("unitId");
+```
+>L: Получить создателя юнита.
+```C#
+(string) guid = GetUnitCreator("unitId");
+```
 ***
 
 ## Игрок
