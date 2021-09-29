@@ -733,6 +733,17 @@
 ```
 ***
 
+## Item
+>L: Получить номер предмета по имени.
+```C#
+(int) itemId = GetItemIdByName("itemName");
+```
+>L: Получить номер комплекта, к которому относится предмет.
+```C#
+(int) SetId = GetItemSetsId("itemName" or itemId);
+```
+***
+
 ## Разблокированные Lua функции из клиента
 + Сделано для обхода защит различных серверов
 
@@ -748,7 +759,7 @@
 ```C#
 (int) spellId = GetSpellIdByShapeshiftIndex(index);
 ```
->L: Оригинальные WoW API функции
+>L: Переопределённые оригинальные WoW API функции
 ```C#
 (void) CastShapeshiftFormByIndex(index);
 (void) SendAddonMessage("prefix", "text", "type" [, "player"]);
@@ -767,7 +778,8 @@
 (void) SetMultiCastSpell(actionID,spellID);
 (void) CastPetAction(index);
 (void) CastSpell(spellID, "bookType");
-(void) PetAttack();
+(void) PetAttack(unitId);
+(void) PetStopAttack();
 (void) JumpOrAscendStart();
 (void) RunMacro(id or "name");
 (void) RunMacroText("macrotext");
