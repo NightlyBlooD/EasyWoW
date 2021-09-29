@@ -600,7 +600,7 @@
 ```C#
 (void) LookAt(unitId);
 ```
->L: Выбрать таргет
+>L: Выбрать таргет (Бывший TargetUnit)
 ```C#
 (void) SetTarget(unitId);
 ```
