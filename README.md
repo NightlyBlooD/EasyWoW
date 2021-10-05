@@ -600,9 +600,10 @@
 ```C#
 (void) LookAt(unitId);
 ```
->L: Выбрать таргет (Бывший TargetUnit)
+>L: Выбрать таргет
 ```C#
 (void) SetTarget(unitId);
+//Аналог TargetUnit(unitId)
 ```
 >L: Телепортироваться <b>(HACK)</b>
 ```C#
