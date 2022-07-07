@@ -192,7 +192,7 @@
 ```C#
 (bool) result = LoadModuleFile("moduleName", "file");
 /* example
-    /run result = api.LoadModuleSource("MyModule","C:\\MyModule.lua");
+    /run result = api.LoadModuleFile("MyModule","C:\\MyModule.lua");
     result = true or false;
 */
 ```
