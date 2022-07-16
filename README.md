@@ -6,7 +6,7 @@
 
 + <a href="https://support.microsoft.com/ru-ru/help/2977003/the-latest-supported-visual-c-downloads">Скачать vc_redist.x(32/64).exe</a><br />
 + <a href="https://go.microsoft.com/fwlink/?linkid=2088631">Скачать .NET Framework 4.8</a><br />
-+ <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Скачать DirectX End-User Runtime Web Installer</a> (WINDOWS - 7)<br />
++ <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Скачать DirectX End-User Runtime Web Installer</a><br />
 </br>
 <font color="Lime"> Для работы ПО рекомендуется использовать  <font color="AQUA"><b>OS Windows 10</b></font></font><br />
 <font color="Red">На других версиях OS могут быть проблемы</font>
