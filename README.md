@@ -107,6 +107,9 @@
 /*
     /run a,s = api.GetAsyncKeyState(0x41, 0x53) if(a and s) then print("A and S is pressed!") end;
 */
+
+мой текст про LoadWebRoutine("name")
+LoadWebModule("name")
 ```
 ***
 
