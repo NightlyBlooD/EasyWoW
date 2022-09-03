@@ -108,10 +108,14 @@
     /run a,s = api.GetAsyncKeyState(0x41, 0x53) if(a and s) then print("A and S is pressed!") end;
 */
 
-мой текст про LoadWebRoutine("name")
-LoadWebModule("name")
 ```
 ***
+>L: Загрузить lua в клиент по имени
+LoadWebRoutine("name")
+
+>L: Загрузить lua в клиент (как модуль) по имени
+LoadWebModule("name")
+
 
 ## Работа с файлами/папками
 
