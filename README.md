@@ -1,16 +1,20 @@
 # EasyWoW | ER | Easy Rotation
 
-[![img1](https://i.ibb.co/KjxbqtN/ER.png)](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
+[![img1](https://i.ibb.co/jVvSgM5/ER.png)](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
 
-## Скачать Easy WoW
+## Скачать
 
-- [Cкачать](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
+- [Cкачать ER](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
 
 ---
 
 ## Библиотеки
 
 Необходимые библиотеки для работы ПО:
+
+> DirectX - Обязательно!
+
+> vc_redist.x86 - Обязательно!
 
 - DirectX
     - [dxwebsetup](https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe)
@@ -22,8 +26,10 @@
 - NET Framework 4.8
     - [NET Framework](https://go.microsoft.com/fwlink/?linkid=2088631)
 
+---
+
 <details>
-<summary>Доп ссылки</summary>
+<summary>Дополнительные ссылки</summary>
 
 - DirectX
     - [1](https://1drv.ms/u/s!AjNCcsTviawkm0xUPQEYTTEAcI4U?e=CrGNTF)
@@ -39,11 +45,6 @@
 </details>
 
 ---
-
-## API
-
----
-
 
 # Advanced API
 
@@ -62,7 +63,8 @@
 + Имя функции <strong>ExecuteFile</strong> зависит от функции Execute и добавляется префикс File.
 + Имя функции <strong>EasyWoW</strong> меняется в ижеторе.
 + Макрос <strong>/execute</strong> изменяется в зависимости от имени функции <strong>Execute</strong>.
-#
+
+---
 
 ## Системные функции
 
