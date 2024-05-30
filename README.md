@@ -1,15 +1,49 @@
-# EasyWoW2
-+ <a href="../../releases" download>Скачать Easy WoW</a>
-</br>
+# EasyWoW | ER | Easy Rotation
 
->Необходимые библиотеки для работы ПО:</br>
+[![img1](https://i.ibb.co/KjxbqtN/ER.png)](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
 
-+ <a href="https://support.microsoft.com/ru-ru/help/2977003/the-latest-supported-visual-c-downloads">Скачать vc_redist.x(32/64).exe</a><br />
-+ <a href="https://go.microsoft.com/fwlink/?linkid=2088631">Скачать .NET Framework 4.8</a><br />
-+ <a href="https://www.microsoft.com/en-us/download/details.aspx?id=35">Скачать DirectX End-User Runtime Web Installer</a><br />
-</br>
-<font color="Lime"> Для работы ПО рекомендуется использовать  <font color="AQUA"><b>OS Windows 10</b></font></font><br />
-<font color="Red">На других версиях OS могут быть проблемы</font>
+## Скачать Easy WoW
+
+- [Cкачать](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
+
+---
+
+## Библиотеки
+
+Необходимые библиотеки для работы ПО:
+
+- DirectX
+    - [dxwebsetup](https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe)
+
+- vc_redist
+    - [vc_redist.x86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+    - [vc_redist.x64](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+    
+- NET Framework 4.8
+    - [NET Framework](https://go.microsoft.com/fwlink/?linkid=2088631)
+
+<details>
+<summary>Доп ссылки</summary>
+
+- DirectX
+    - [1](https://1drv.ms/u/s!AjNCcsTviawkm0xUPQEYTTEAcI4U?e=CrGNTF)
+    - [2](https://www.microsoft.com/en-us/download/details.aspx?id=35)
+
+- vc_redist
+    - [1](https://1drv.ms/u/s!AjNCcsTviawkm02Ji8-Aj5OgLfNn?e=GvnwOh)
+    - [2](https://support.microsoft.com/ru-ru/help/2977003/the-latest-supported-visual-c-downloads)
+
+- NET Framework 4.8
+    - [1](https://1drv.ms/u/s!AjNCcsTviawkm0_DKADBmc1m567Q?e=swDIX2)
+
+</details>
+
+---
+
+## API
+
+---
+
 
 # Advanced API
 
