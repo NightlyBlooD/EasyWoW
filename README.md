@@ -1,4 +1,4 @@
-# EasyWoW
+# EasyWoW2
 + <a href="../../releases" download>Скачать Easy WoW</a>
 </br>
 
