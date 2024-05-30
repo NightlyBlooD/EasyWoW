@@ -1,8 +1,8 @@
 # EasyWoW | ER | Easy Rotation
 
-[![img1](https://i.ibb.co/jVvSgM5/ER.png)](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
-
 ## Скачать
+
+[![img1](https://i.ibb.co/jVvSgM5/ER.png)](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
 
 - [Cкачать ER](https://github.com/NightlyBlooD/EasyWoW/releases/download/1.3.2.2/EWoW.zip)
 
@@ -12,9 +12,9 @@
 
 Необходимые библиотеки для работы ПО:
 
-> DirectX - Обязательно!
+> DirectX - обязательно!
 
-> vc_redist.x86 - Обязательно!
+> vc_redist.x86 - обязательно!
 
 - DirectX
     - [dxwebsetup](https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe)
@@ -25,8 +25,6 @@
     
 - NET Framework 4.8
     - [NET Framework](https://go.microsoft.com/fwlink/?linkid=2088631)
-
----
 
 <details>
 <summary>Дополнительные ссылки</summary>
